@@ -15,4 +15,13 @@ You'll be using the API to show the user a list of dog breeds the API supports, 
 3. Add the necessary code to let a user pick a breed and see a picture of that dog.
 4. Submit a link to your repo and the number of hours it took you to complete this project (and how much you would charge if this were a real project) to miles at inkind dot com.
 
+## Evaluation
+
+I'll evaluate your code by downloading your repo and running this command: `bundle install && bundle exec rake db:migrate && bundle exec rails s`
+
+Your submission will be evaluated based on:
+
+* Cleanest solution (short & efficient)
+* Following Ruby on Rails philosophy
+
 Thanks!
