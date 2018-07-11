@@ -2,7 +2,7 @@ class DogBreedFetcher
   attr_reader :breed
 
   def initialize(name=nil)
-    @name  = breed || "random"
+    @name  = name || "random"
     @breed = Breed.find_or_initialize_by(name: name)
   end
 
