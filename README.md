@@ -1,6 +1,6 @@
 # README
 
-This is a simple Ruby on Rails test project from inKind. You should be able to complete this project in just a few hours.
+This is a simple Ruby on Rails test project from inKind. You should be able to complete this project in less than 30 minutes.
 
 It uses this [free API](https://dog.ceo/dog-api/) to show the user a random picture of a dog.
 
