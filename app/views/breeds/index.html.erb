@@ -1,7 +1,14 @@
 <div class="dog">
 
   <h1>It's a dog</h1>
+  
 
+  <%= form_tag("/getDogImaage", method: "get") do %>
+    <%= label_tag(:q, "Select Dog Breed Type:") %>
+    <%= select_tag "breedType", options_for_select( @breedJson.collect{ |u| [u['id'], u['value']] }) %>
+    <%= submit_tag("Get Image") %>
+  <% end %>
+  
   <h3><%= @breed.name.humanize %></h3>
 
   <%= image_tag @breed.pic_url %>

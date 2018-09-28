@@ -8,8 +8,8 @@ class DogBreedFetcher
 
   def fetch
     return @breed if @breed.pic_url.present?
-
-    @breed.pic_url = fetch_info["message"]
+    @response = fetch_info["message"]
+    @breed.pic_url = @response.class == Array ? @response.first : @response
     @breed.save && @breed
   end
 
@@ -21,12 +21,17 @@ class DogBreedFetcher
 private
   def fetch_info
     begin
-      JSON.parse(RestClient.get("https://dog.ceo/api/breeds/image/#{ @name }").body)
+      if @name == 'random'
+        JSON.parse(RestClient.get("https://dog.ceo/api/breeds/image/random").body)
+      else
+        JSON.parse(RestClient.get("https://dog.ceo/api/breed/#{ @name }/images").body)
+      end
+
     rescue Object => e
       default_body
     end
   end
-
+  
   def default_body
     {
       "status"  => "success",

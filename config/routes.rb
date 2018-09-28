@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :breeds
 
   root "breeds#index"
+  get '/getDogImaage' => 'breeds#getImage'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
